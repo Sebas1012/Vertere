@@ -1,0 +1,41 @@
+# Build artifacts (regenerated inside the image)
+node_modules
+.svelte-kit
+build
+dist
+
+# VCS
+.git
+.gitignore
+.gitattributes
+
+# IDE / editor
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Secrets — never bake into images
+.env
+.env.*
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Docs / repo metadata that does not affect the build
+README.md
+LICENSE
+.claude
+
+# Docker files themselves don't belong in the build context
+Dockerfile
+.dockerignore
+docker-compose*.yml
