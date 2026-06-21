@@ -2,6 +2,9 @@
 	"name": "vertere",
 	"private": true,
 	"version": "0.0.1",
+	"description": "Minimal, secure Markdown to PDF editor.",
+	"author": "Sebastian Henao",
+	"license": "MIT",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",

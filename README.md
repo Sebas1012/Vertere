@@ -70,4 +70,6 @@ In the browser print dialog, expand **More settings** and uncheck **Headers and 
 
 ## License
 
-See [`LICENSE`](./LICENSE).
+MIT — see [`LICENSE`](./LICENSE).
+
+---
