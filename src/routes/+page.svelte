@@ -59,6 +59,14 @@
 			<span class="tag">markdown → pdf</span>
 		</div>
 		<div class="actions">
+			<span class="credits">
+				Hecho con <span class="heart" aria-hidden="true">💚</span> por
+				<a
+					href="https://github.com/Sebas1012"
+					target="_blank"
+					rel="noopener noreferrer">sebas1012</a
+				>
+			</span>
 			<button type="button" class="ghost" onclick={reset}>Reset</button>
 			<button type="button" class="primary" onclick={exportPdf}>
 				<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
@@ -135,7 +143,40 @@
 
 	.actions {
 		display: flex;
+		align-items: center;
 		gap: 0.5rem;
+	}
+
+	.credits {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		color: var(--text-muted);
+		margin-right: 0.5rem;
+	}
+
+	.credits .heart {
+		font-size: 0.85em;
+		vertical-align: -1px;
+	}
+
+	.credits a {
+		color: var(--text-muted);
+		text-decoration: none;
+		border-bottom: 1px dashed currentColor;
+		transition: color 200ms ease, border-color 200ms ease;
+	}
+
+	.credits a:hover,
+	.credits a:focus-visible {
+		color: var(--accent);
+		border-bottom-color: var(--accent);
+		outline: none;
+	}
+
+	@media (max-width: 640px) {
+		.credits {
+			display: none;
+		}
 	}
 
 	button {
