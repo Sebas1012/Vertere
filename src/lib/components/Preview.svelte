@@ -111,8 +111,8 @@
 		border-radius: 4px;
 		overflow: hidden;
 		box-shadow:
-			0 1px 2px rgba(0, 0, 0, 0.4),
-			0 16px 40px -8px rgba(0, 0, 0, 0.5);
+			0 1px 2px rgba(2, 6, 23, 0.5),
+			0 16px 40px -8px rgba(2, 6, 23, 0.65);
 		flex-shrink: 0;
 	}
 

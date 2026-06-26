@@ -98,7 +98,7 @@
 	.app {
 		display: grid;
 		grid-template-rows: auto 1fr;
-		height: 100vh;
+		height: 100dvh;
 		min-height: 0;
 		background: var(--bg);
 		color: var(--text);
@@ -193,7 +193,12 @@
 		transition:
 			background-color 200ms ease,
 			border-color 200ms ease,
-			color 200ms ease;
+			color 200ms ease,
+			transform 100ms ease;
+	}
+
+	button:active {
+		transform: scale(0.97);
 	}
 
 	button:focus-visible {
