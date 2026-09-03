@@ -6,6 +6,7 @@
 	"author": "Sebastian Henao",
 	"license": "MIT",
 	"type": "module",
+	"packageManager": "pnpm@11.2.2",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
