@@ -6,7 +6,7 @@ ENV CI=true \
     PNPM_HOME=/root/.local/share/pnpm \
     PATH=/root/.local/share/pnpm:$PATH
 
-RUN corepack enable
+RUN npm i -g pnpm@11.2.2
 
 WORKDIR /app
 
