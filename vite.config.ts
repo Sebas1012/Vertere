@@ -14,7 +14,26 @@ export default defineConfig({
 			adapter: adapter({
 				fallback: 'index.html',
 				strict: false
-			})
+			}),
+			// El bootstrap de SvelteKit es un <script> inline cuyo hash cambia en cada
+			// build, asi que no se puede fijar en la cabecera de nginx. Kit emite un
+			// <meta http-equiv="content-security-policy"> con el hash correcto; esa es
+			// la politica estricta para scripts. frame-ancestors va solo en la cabecera
+			// porque los <meta> lo ignoran.
+			csp: {
+				mode: 'hash',
+				directives: {
+					'default-src': ['self'],
+					'script-src': ['self'],
+					'style-src': ['self', 'unsafe-inline', 'https://fonts.googleapis.com'],
+					'font-src': ['self', 'https://fonts.gstatic.com'],
+					'img-src': ['self', 'data:', 'https:'],
+					'connect-src': ['self'],
+					'base-uri': ['self'],
+					'form-action': ['self'],
+					'object-src': ['none']
+				}
+			}
 		})
 	]
 });
