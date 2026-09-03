@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: cenitops
+  name: vertere
   namespace: default
 spec:
   ingressClassName: traefik
   tls:
     - hosts:
-        - cenitops.sebas1012.site
+        - vertere.sebas1012.site
       secretName: cloudflare-origin-cert
   rules:
-    - host: cenitops.sebas1012.site
+    - host: vertere.sebas1012.site
       http:
         paths:
           - path: /
