@@ -59,7 +59,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           source: k8s/
-          target: ~/cenitops
+          target: ~/vertere
           overwrite: true
 
       - name: Aplicar en microk8s
@@ -73,9 +73,9 @@ jobs:
             set -e
             export PATH="$PATH:/snap/bin"
             OWNER=$(echo "$OWNER" | tr "A-Z" "a-z")   # ghcr solo acepta minusculas
-            microk8s kubectl apply -R -f "$HOME/cenitops/k8s"
-            microk8s kubectl set image deploy/vertere-web web=ghcr.io/$OWNER/vertere-web:$SHA
-            microk8s kubectl rollout status deploy/vertere-web --timeout=180s
+            microk8s kubectl -n production apply -R -f "$HOME/vertere/k8s"
+            microk8s kubectl -n production set image deploy/vertere-web web=ghcr.io/$OWNER/vertere-web:$SHA
+            microk8s kubectl -n production rollout status deploy/vertere-web --timeout=180s
         env:
           SHA: ${{ github.sha }}
           OWNER: ${{ github.repository_owner }}
